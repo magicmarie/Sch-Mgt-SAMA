@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>O-Level Only Vs A-Level and O-Level</h4>
+    <div style="display: block">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [colors]="pieChartColors">
+      </canvas>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h4>Size of Schools based on student numbers across all Partner Schools</h4>
+    <div style="display: block">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+        [chartType]="barChartType"></canvas>
+    </div>
+    <button (click)="randomize()">Update</button>
+  </div>
+
+</div>

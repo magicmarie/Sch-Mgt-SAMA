@@ -1,0 +1,68 @@
+<div class="container row">
+
+  <div class=" col-md-6 col-md-offset-3 jumbotron ">
+    <h2>Add school details</h2>
+
+    <form name="form" (ngSubmit)="f.form.valid && addSchool()" #f="ngForm" novalidate>
+      <div class="form-group ">
+        <label for="schoolName" class="control-label">School name:</label>
+        <input type="text" name="schoolName" class="form-control" [(ngModel)]="school.schoolName" #schoolName="ngModel" required>
+      </div>
+      <div class="form-group ">
+        <label for="schoolId" class="control-label">School Id:</label>
+        <input type="number" name="schoolId" class="form-control" [(ngModel)]="school.schoolId" #schoolId="ngModel" required>
+      </div>
+      <div class="form-group ">
+        <label for="communityUnit" class="control-label">Community Unit:</label>
+        <input type="text" name="communityUnit" [(ngModel)]="school.communityUnit" #communityUnit="ngModel" class="form-control"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Select School Type:</label>
+        <div class="checkbox">
+          <label>
+            <input name="isDay" [(ngModel)]="school.isDay" #isDay="ngModel" type="checkbox"> Day
+          </label>
+          <label>
+            <input name="isBoarding" [(ngModel)]="school.isBoarding" #isBoarding="ngModel" type="checkbox"> Boarding
+          </label>
+        </div>
+      </div>
+      <div class="form-group ">
+        <label>Select School Level:</label>
+        <div class="checkbox">
+          <label>
+            <input name="oLevel" [(ngModel)]="school.oLevel" #oLevel="ngModel" type="checkbox"> O-Level
+          </label>
+          <label>
+            <input name="aLevel" [(ngModel)]="school.aLevel" #aLevel="ngModel" type="checkbox"> A-Level
+          </label>
+        </div>
+      </div>
+      <div class="form-group ">
+        <label>Select School Sex:</label>
+        <div class="checkbox">
+          <label>
+            <input name="isMale" [(ngModel)]="school.isMale" #isMale="ngModel" type="checkbox"> Male
+          </label>
+          <label>
+            <input name="isFemale" [(ngModel)]="school.isFemale" #isFemale="ngModel" type="checkbox"> Female
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="no_students" class="control-label">Number Of Students</label>
+        <input name="no_students" [(ngModel)]="school.no_students" #no_students="ngModel" type="number" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button [disabled]="!f.form.valid || processing" type="submit " class="btn btn-primary btn-block">Submit</button>
+      </div>
+
+    </form>
+
+
+
+  </div>
